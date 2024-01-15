@@ -1,4 +1,4 @@
-const numberEl = document.querySelector('.sub-heading');
+const numberEl = document.querySelector('.num-input');
 const meterToFeetEl = document.querySelector('.meter-to-feet');
 const feetToMeterEl = document.querySelector('.feet-to-meter');
 const gallonsToLitersEl = document.querySelector('.gallons-to-liters');
@@ -6,8 +6,15 @@ const litersToGallonsEl = document.querySelector('.liters-to-gallons');
 const kiloToPoundsEl = document.querySelector('.kilos-to-pounds');
 const poundsToKilosEl = document.querySelector('.pounds-to-kilos');
 
-const number = 20;
-numberEl.textContent = number;
+let number = 20;
+numberEl.addEventListener('change', () => {
+    number = numberEl.value;
+    renderPage(number);
+})
+if(numberEl.value === "") {
+    number.textContent = number.value;
+    renderPage(number);
+}
 
 function convertToFeet(num) {
     let mToFt = (num * 3.28084).toFixed(3);
@@ -47,5 +54,3 @@ function renderPage() {
     convertToPounds(number);
     convertToKilos(number);
 }
-
-renderPage();

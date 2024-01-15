@@ -37,8 +37,18 @@ body {
     margin-bottom: 1em;
 }
 
-.sub-heading {
+.num-input {
     font-size: 6em;
+    width: 2em;
+    text-align: center;
+    color: var(--font-clr);
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--font-clr);
+}
+
+.num-input:focus-visible {
+    outline: none;
 }
 
 .unit-section {   
